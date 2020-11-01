@@ -1,9 +1,11 @@
 from pages.base_page import BasePage
 from pages.locators import MainPageLocators
-from pages.login_page import LoginPage
 
 
 class MainPage(BasePage):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
     def go_to_login_page(self):
         link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
         link.click()
